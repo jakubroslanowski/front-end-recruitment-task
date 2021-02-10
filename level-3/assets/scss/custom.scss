@@ -5,44 +5,65 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-@import "functions";
-@import "variables";
-@import "mixins";
-@import "root";
-@import "reboot";
-@import "type";
-@import "images";
-@import "code";
-@import "grid";
-@import "tables";
-@import "forms";
-@import "buttons";
-@import "transitions";
-@import "dropdown";
-@import "button-group";
-@import "input-group";
-@import "custom-forms";
-@import "nav";
-@import "navbar";
-@import "card";
-@import "breadcrumb";
-@import "pagination";
-@import "badge";
-@import "jumbotron";
-@import "alert";
-@import "progress";
-@import "media";
-@import "list-group";
-@import "close";
-@import "toasts";
-@import "modal";
-@import "tooltip";
-@import "popover";
-@import "carousel";
-@import "spinners";
-@import "utilities";
-@import "print";
+@import 'functions';
+@import 'variables';
+@import 'mixins';
+@import 'reboot';
+@import 'type';
+@import 'grid';
+@import 'buttons';
+@import 'close';
+@import 'modal';
 
-body {
-    color: $blue
+$buttonbackground: #e4c1ae 0% 0% no-repeat padding-box;
+@mixin button-look($color, $decoration: none) {
+  color: $color;
+  text-decoration: $decoration;
+}
+
+.button {
+  background: $buttonbackground;
+  text-align: center;
+  font: bold 16px/19px Roboto;
+  margin: 0 6.875em 0 20.313em;
+  display: inline-block;
+  width: 8.438em;
+  padding: 0.875em 0 0.875em 0;
+  @include border-radius(0.875em);
+  @include media-breakpoint-down(sm) {
+    margin: 0 0 0 5em;
+  }
+  @include button-look($white);
+
+  &:hover {
+    @include button-look($white);
+  }
+}
+
+.title {
+  text-align: left;
+  font: bold 42px/49px Roboto;
+  margin: 2.048em 2.619em 1.024em 2.619em;
+  @include media-breakpoint-down(sm) {
+    margin: 1em 0 1em 0;
+  }
+}
+
+.text {
+  text-align: left;
+  font: 300 16px/26px Roboto;
+  @include media-breakpoint-down(sm) {
+    margin: 0 0 2em 0;
+  }
+  margin: 0 6.875em 3.063em 6.875em;
+}
+
+.col-xl-6 {
+  @include media-breakpoint-up(xl) {
+    padding: 0;
+  }
+}
+
+img {
+  @include img-fluid();
 }
